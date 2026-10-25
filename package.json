@@ -1,0 +1,59 @@
+{
+  "name": "pgcow",
+  "version": "0.1.0",
+  "description": "Instant local data-directory branches (SQLite/local folders) via OS copy-on-write, synced with git",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "pgcow": "./bin/pgcow.js"
+  },
+  "main": "./dist/bridge.js",
+  "exports": {
+    ".": "./dist/bridge.js",
+    "./bridge": "./dist/bridge.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "SKILL.md",
+    "README.md",
+    "LICENSE",
+    "jsr.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && vitest run",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "publint": "^0.3.12",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.5"
+  },
+  "author": "Augusto Cerrutti <augustocerruttisatto@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanchingyg/pgcow.git"
+  },
+  "mcpName": "io.github.kanchingyg/pgcow",
+  "homepage": "https://github.com/kanchingyg/pgcow#readme",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "cli",
+    "typescript",
+    "rust",
+    "sqlite",
+    "postgresql",
+    "copy-on-write",
+    "git",
+    "database",
+    "branching"
+  ]
+}
