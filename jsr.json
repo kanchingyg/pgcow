@@ -1,0 +1,23 @@
+{
+  "name": "@kanchingyg/pgcow",
+  "version": "0.1.1",
+  "description": "Instant local data-directory branches (SQLite/local folders) via OS copy-on-write, synced with git",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/bridge.ts",
+    "./bridge": "./src/bridge.ts"
+  },
+  "publish": {
+    "include": [
+      "src/**/*.ts",
+      "LICENSE",
+      "README.md",
+      "SKILL.md",
+      "jsr.json"
+    ],
+    "exclude": [
+      "src/**/*.test.ts",
+      "src/**/*.spec.ts"
+    ]
+  }
+}
