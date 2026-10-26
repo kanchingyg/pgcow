@@ -6,10 +6,6 @@
 [![JSR Score](https://jsr.io/badges/@kanchingyg/pgcow/score)](https://jsr.io/@kanchingyg/pgcow/score)
 [![Rust](https://img.shields.io/badge/engine-Rust_%2B_TypeScript-dea584)](https://github.com/kanchingyg/pgcow)
 [![license](https://img.shields.io/github/license/kanchingyg/pgcow)](https://github.com/kanchingyg/pgcow/blob/HEAD/LICENSE)
-[![npm](https://img.shields.io/npm/v/pgcow)](https://www.npmjs.com/package/pgcow)
-[![JSR](https://jsr.io/badges/@kanchingyg/pgcow)](https://jsr.io/@kanchingyg/pgcow)
-[![Rust](https://img.shields.io/badge/engine-Rust-dea584)](https://github.com/kanchingyg/pgcow)
-[![license](https://img.shields.io/github/license/kanchingyg/pgcow)](https://github.com/kanchingyg/pgcow/blob/HEAD/LICENSE)
 
 **One line:** `npx pgcow branch feat-a --allow-write` (or `bunx pgcow branch feat-a --allow-write`): instant local **data-directory branches** via OS copy-on-write, aligned with `git checkout`.
 

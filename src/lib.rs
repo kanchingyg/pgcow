@@ -4,4 +4,4 @@ pub mod git_hook;
 pub mod mcp;
 pub mod paths;
 
-pub const VERSION: &str = "0.1.0";
+pub const VERSION: &str = "0.1.1";

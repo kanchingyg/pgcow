@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import { mkdirSync, writeFileSync, existsSync } from "node:fs";
-import { join } from "node:path";
+import { mkdirSync, writeFileSync, existsSync, readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import {
   createBranch,
@@ -16,7 +17,8 @@ import {
   type McpToolDefinition,
 } from "./bridge.js";
 
-const VERSION = "0.1.0";
+const PKG_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const VERSION = JSON.parse(readFileSync(join(PKG_ROOT, "package.json"), "utf8")).version as string;
 
 function parseFlags(argv: string[]): {
   flags: string[];

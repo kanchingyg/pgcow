@@ -7,8 +7,13 @@ import {
   existsSync,
   mkdirSync,
 } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import { tmpdir } from "node:os";
+import { fileURLToPath } from "node:url";
+
+const PKG_VERSION = JSON.parse(
+  readFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "package.json"), "utf8"),
+).version as string;
 
 import {
   ensureStore,
@@ -123,12 +128,12 @@ describe("MCP bridge", () => {
   it("handshake initialize and tools/list", () => {
     dispatchMcpMessage(
       { jsonrpc: "2.0", id: 1, method: "initialize", params: {} },
-      { name: "pgcow", version: "0.1.0" },
+      { name: "pgcow", version: PKG_VERSION },
       tools,
     );
     dispatchMcpMessage(
       { jsonrpc: "2.0", id: 2, method: "tools/list", params: {} },
-      { name: "pgcow", version: "0.1.0" },
+      { name: "pgcow", version: PKG_VERSION },
       tools,
     );
     const init = JSON.parse(jsonRpcFrameLog[0]);
@@ -148,7 +153,7 @@ describe("MCP bridge", () => {
         method: "tools/call",
         params: { name: "switch_db_branch", arguments: { name: "main" } },
       },
-      { name: "pgcow", version: "0.1.0" },
+      { name: "pgcow", version: PKG_VERSION },
       tools,
       true,
     );

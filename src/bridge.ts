@@ -1,3 +1,13 @@
+/**
+ * MCP stdio bridge, output guards, and embedding helpers for `pgcow`.
+ *
+ * @example
+ * ```ts
+ * import { startMcpServer, setGuards } from "jsr:@kanchingyg/pgcow/bridge";
+ * ```
+ *
+ * @module
+ */
 import { createHash } from "node:crypto";
 
 /** Constant `DEFAULT_N_CTX` defining default n ctx. */
